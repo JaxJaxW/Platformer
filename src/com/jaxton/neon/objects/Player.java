@@ -71,8 +71,6 @@ public class Player extends GameObject {
                 if (getBoundsLeft().intersects(tempObject.getBounds())) {
                     x = tempObject.getX() + width;
                 }
-
-
             }
         }
     }
@@ -102,4 +100,5 @@ public class Player extends GameObject {
     public Rectangle getBoundsLeft() {
         return new Rectangle((int)x, (int)y+5, (int)5, (int)height-10);
     }
+
 }

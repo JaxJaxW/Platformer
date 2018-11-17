@@ -52,4 +52,5 @@ public class KeyInput extends KeyAdapter {
             }
         }
     }
+
 }

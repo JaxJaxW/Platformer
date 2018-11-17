@@ -43,7 +43,6 @@ public class Game extends Canvas implements Runnable {
         //handler.createLevel();
 
         this.addKeyListener(new KeyInput(handler));
-
     }
 
     public synchronized void start() {
@@ -93,7 +92,6 @@ public class Game extends Canvas implements Runnable {
                 cam.tick(handler.object.get(i));
             }
         }
-
     }
 
     private void render() {
@@ -120,7 +118,6 @@ public class Game extends Canvas implements Runnable {
         /////////////////////////////////
         g.dispose();
         bs.show();
-
     }
 
     private void LoadImageLevel(BufferedImage image) {
@@ -148,14 +145,7 @@ public class Game extends Canvas implements Runnable {
                     handler.addObject(new Player(xx*32,yy*32, handler, ObjectId.Player));
                 }
             }
-
-
         }
-
-
-
-
-
     }
 
     public static Texture getInstance() {
@@ -165,6 +155,5 @@ public class Game extends Canvas implements Runnable {
     public static void main(String[] args) {
         new Window(800, 600, "Neon Platform Game Prototype", new Game());
     }
-
 
 }

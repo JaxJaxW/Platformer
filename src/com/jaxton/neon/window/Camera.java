@@ -15,10 +15,6 @@ public class Camera {
         x = -player.getX() + Game.WIDTH/2;
     }
 
-
-
-
-
     public float getX() {
         return x;
     }
@@ -34,4 +30,5 @@ public class Camera {
     public void setY(float y) {
         this.y = y;
     }
+
 }
