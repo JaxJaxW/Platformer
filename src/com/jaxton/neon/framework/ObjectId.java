@@ -4,7 +4,9 @@ public enum ObjectId
 {
 
     Player(),
-    Block()
+    Block(),
+    Enemy(),
+    Pickup(),
 
 
 }

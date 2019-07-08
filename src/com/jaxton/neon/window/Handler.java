@@ -3,33 +3,43 @@ package com.jaxton.neon.window;
 import java.awt.Graphics;
 import java.util.LinkedList;
 import com.jaxton.neon.framework.*;
-import com.jaxton.neon.objects.*;
+import com.jaxton.neon.objects.Avatar;
+import com.jaxton.neon.objects.Block;
 
 public class Handler {
 
-    public LinkedList<GameObject> object = new LinkedList<GameObject>();
+    public LinkedList<LinkedList<GameObject>> objects = new LinkedList<>();
+    public LinkedList<Block> blocks = new LinkedList<>();
+    public LinkedList<Avatar> avatars = new LinkedList<>();
     private GameObject tempObject;
 
     public void tick() {
-        for (int i = 0; i < object.size(); i++) {
-            tempObject = object.get(i);
-            tempObject.tick(object);
+        for (int i = 0; i < objects.size(); i++) {
+            tempObject = objects.get(i);
+            tempObject.tick(objects);
         }
+
     }
 
     public void render(Graphics g) {
-        for (int i = 0; i < object.size(); i++) {
-            tempObject = object.get(i);
+        for (int i = 0; i < objects.size(); i++) {
+            tempObject = objects.get(i);
             tempObject.render(g);
         }
     }
 
     public void addObject(GameObject object) {
-        this.object.add(object);
+        if (object.getId() == ObjectId.Block) {
+            this.blocks.add((Block)object);
+        } else if (object.getId() == ObjectId.Player) {
+            this.avatars.add((Avatar)object);
+        } else if (object.getId() == ObjectId.Enemy) {
+            this.avatars.add((Avatar)object);
+        }
     }
 
     public void removeObject(GameObject object) {
-        this.object.remove(object);
+        this.objects.remove(object);e
     }
 
     /*public void createLevel() {
